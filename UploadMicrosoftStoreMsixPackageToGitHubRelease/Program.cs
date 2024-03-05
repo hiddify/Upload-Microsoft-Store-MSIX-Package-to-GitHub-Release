@@ -35,12 +35,6 @@ async Task Start(Options options)
     Release gitHubRelease = await GitHubHelper.GetGitHubReleaseWithVersion(gitHubRepoOwner, gitHubRepoName, msixPackages[0].Version);
     Console.WriteLine($"Found GitHub release: {gitHubRelease.TagName}");
 
-    if (gitHubRelease.Assets.FirstOrDefault(p => p.CreatedAt != p.UpdatedAt) != null)
-    {
-        Console.WriteLine("Already Uploaded! Exiting ...");
-        return;
-    }
-
     await GitHubHelper.UploadMsixPackagesToGitHubRelease(gitHubRelease, msixPackages, options.AssetNamePattern, options.DryRun);
 
     Console.WriteLine("Exiting ...");

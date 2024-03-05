@@ -9,8 +9,8 @@ RUN dotnet publish -c Release -o /app --no-self-contained
 
 # Label the container
 LABEL maintainer="Jason Wei <JasonWei512@Outlook.com>"
-LABEL repository="https://github.com/JasonWei512/Upload-Microsoft-Store-MSIX-Package-to-GitHub-Release"
-LABEL homepage="https://github.com/JasonWei512/Upload-Microsoft-Store-MSIX-Package-to-GitHub-Release"
+LABEL repository="https://github.com/hiddify/Upload-Microsoft-Store-MSIX-Package-to-GitHub-Release"
+LABEL homepage="https://github.com/hiddify/Upload-Microsoft-Store-MSIX-Package-to-GitHub-Release"
 
 # Label as GitHub action
 LABEL com.github.actions.name="Upload Microsoft Store MSIX Package to GitHub Release"
